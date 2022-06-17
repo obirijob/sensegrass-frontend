@@ -1,0 +1,217 @@
+.main {
+  background: #035225;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset black 0 0 100px;
+  overflow: hidden;
+  * {
+    color: $white;
+  }
+  .header {
+    * {
+      font-weight: bold;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    background: transparentize(black, 0.4);
+    .items {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 0 40px;
+        .menu-item {
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+    .sidebar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8px;
+      .sidebar-item {
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.6;
+        }
+        &:not(:nth-last-child(1))::after {
+          content: '|';
+          margin: 0 8px;
+        }
+        &.date {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  .content {
+    flex: 1;
+    display: flex;
+    padding: 30px;
+
+    button {
+      background: #32dd79;
+      cursor: pointer;
+      text-transform: uppercase;
+      border: solid 2px #32dd79;
+      width: 150px;
+      height: 30px;
+      color: rgba(0, 0, 0, 0.867);
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.33);
+      border-radius: 5px;
+      transition: .3s ease-in-out;
+      &:hover{
+        letter-spacing: 1.5px;
+      }
+    }
+    .title {
+      font-size: 30px;
+      opacity: 0.5;
+    }
+    .sensor {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      gap: 10px;
+      .sensor-content {
+        display: flex;
+        flex-direction: column;
+        background: #098050;
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        .sensor-content-header {
+          padding: 20px;
+          background: #2eb678;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .sensor-content-body{
+            flex: 1;
+            display: flex;
+            padding: 30px;
+            .separator{
+                margin: 30px 10px;
+                background: transparentize($color: white, $amount: .6);
+                width: 2px;
+                // height: 100%;
+                border-radius: 5px;
+            }
+            .readings{
+                flex: 1;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .map{
+                min-width: 300px;
+            }
+        }
+      }
+    }
+
+    .weather {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      gap: 10px;
+      .weather-content {
+        padding: 10px;
+        background: #1eb297;
+        flex: 1;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        .weather-overview {
+            background: #44d8bd;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 6px;
+          padding: 20px;
+          gap: 15px;
+          .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .temp {
+              font-size: 40px;
+            }
+          }
+        }
+        .weather-item{
+            font-size: larger;
+            font-weight: bold;
+            margin: 20px 30px;
+        }
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .ask {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+      margin: 30px 10px;
+      width: 150px;
+      &:hover {
+        opacity: 0.6;
+        letter-spacing: 2px;
+      }
+    }
+    .dock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 60px;
+      gap: 50px;
+      background: transparentize(black, 0.6);
+      border: solid green 1.5px;
+      border-radius: 10px;
+      transform: translateY(8px);
+      .dock-item {
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        * {
+          transition: 0.3s ease-in-out;
+        }
+        &:hover {
+          * {
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+}
